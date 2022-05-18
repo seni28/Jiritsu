@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jiritsu | A propos </title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="navigation">
+        <ul>
+          <li class="logo"> 
+            <div class="logoicon"> 
+              <a href="index.html">
+              <img src="Logo.png" alt="Jiritsu Logo"> 
+              </a>
+            </div>
+            <!-- <h2> Dashboard</h2> -->
+            <span class="title" id="title"> Dashboard </span>
+        </li>
+
+          <li class="nav-link">
+            <a href="index.html">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title">Home</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="electricité.html">
+              <span class="icon">
+                <ion-icon name="flash-outline"></ion-icon>
+              </span>
+              <span class="title">Electricité</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="eau.html">
+              <span class="icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </span>
+              <span class="title">Eau</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="temperature.html">
+              <span class="icon">
+                <ion-icon name="thermometer-outline"></ion-icon>
+              </span>
+              <span class="title">Température</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="infor.html">
+              <span class="icon">
+                <ion-icon name="person-outline"></ion-icon>
+              </span>
+              <span class="title">Informations</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </span>
+              <span class="title"> Mieux consommer </span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="a propos.html">
+              <span class="icon">
+                <ion-icon name="thermometer-outline"></ion-icon>
+              </span>
+              <span class="title">A propos</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Main -->
+
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"> </ion-icon>
+          </div>
+
+          <div class="user">
+            <!-- <ion-icon name="person-circle-outline"></ion-icon>   -->
+            <a href="infor.html">
+              <img src="user.png" alt="user">
+            </a>
+            <img src="user.png" alt="user">
+          </div>
+        </div>
+
+        <div class="presentation">
+          <p> 
+            Ce Dashboard sert à recenser les différentes données de votre habitat !
+            L’association Jiritsu a été créée en 2021 par Lou, une étudiante Lilloise en étude supérieur d’ingénieur. 
+            Dans un monde où les enjeux sont de plus en plus conflictuels et dont la solution sont nous, les jeunes de ce modern que nous voulons apporter notre aide et montre aux mondes que nous sommes capables de réaliser de grande chose, à notre échelle : construire un habitat basé sur le Low-tech mais également constitué de matériaux recyclables.
+            Une équipe de 15 étudiants plein d’ambition, ont mis leurs compétences et toute leur énergie pour réaliser des prototypes, des montages, des maquettes… Afin de créer un environnement écologique et durable pour notre futur et pouvoir proposer des habitats accessibles à tous.
+          </p>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="my_chart.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      //Menu Toogle
+      let toggle = document.querySelector(".toggle");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+
+      toggle.addEventListener("click", function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+      });
+
+      //add hovered class in selected list item
+
+      let list = document.querySelectorAll(".navigation li");
+
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+      list.forEach((item) =>
+        item.addEventListener("click", function () {
+
+          list.forEach((item) => item.classList.remove("selected"))
+          this.classList.add("selected");
+
+        })
+      );
+    </script>
+  </body>
+</html>

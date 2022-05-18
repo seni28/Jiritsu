@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jiritsu | Température </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="graphstyle.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="navigation">
+        <ul>
+          <li class="logo"> 
+            <div class="logoicon"> 
+              <a href="index.html">
+              <img src="Logo.png" alt="Jiritsu Logo"> 
+              </a>
+            </div>
+            <!-- <h2> Dashboard</h2> -->
+            <span class="title" id="title"> Dashboard </span>
+        </li>
+
+          <li class="nav-link">
+            <a href="index.html">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title">Home</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="electricité.html">
+              <span class="icon">
+                <ion-icon name="flash-outline"></ion-icon>
+              </span>
+              <span class="title">Electricité</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="eau.html">
+              <span class="icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </span>
+              <span class="title">Eau</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="temperature.html">
+              <span class="icon">
+                <ion-icon name="thermometer-outline"></ion-icon>
+              </span>
+              <span class="title">Température</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="infor.html">
+              <span class="icon">
+                <ion-icon name="person-outline"></ion-icon>
+              </span>
+              <span class="title">Informations</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </span>
+              <span class="title"> Mieux consommer </span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="a propos.html">
+              <span class="icon">
+                <ion-icon name="thermometer-outline"></ion-icon>
+              </span>
+              <span class="title">A propos</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Main -->
+
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"> </ion-icon>
+          </div>
+
+          <div class="user">
+            <!-- <ion-icon name="person-circle-outline"></ion-icon>   -->
+            <a href="infor.html">
+              <img src="user.png" alt="user">
+            </a>
+          </div>
+        </div>
+
+        <!-- chart -->
+
+        <div class="chartBox">
+          <!-- Chart visual -->
+          <div class="GraphTitle">
+            <h2>Suivi de la température et de l'humidité</h2>
+            <p> Gardez un oeil sur la température 
+            et sur l'humidité de votre habitat !</p>   
+          </div>
+          <div class="graphBoxElect">
+
+            
+            <header class="graphHeader">
+              <h1> Température </h1>
+
+              <div class="interval">
+                <span>Journée</span>
+                <span>Semaine</span>
+                <span>Mois</span>
+                <span>Année</span>
+              </div>
+            </header>
+            <div class="boxE1">
+              <canvas id="temperature"></canvas>
+            </div>
+            
+          </div>
+
+        
+            
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="my_chart.js"></script>
+    <script src="temp.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      //Menu Toogle
+      let toggle = document.querySelector(".toggle");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+
+      toggle.addEventListener("click", function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+      });
+
+      //add hovered class in selected list item
+
+      let list = document.querySelectorAll(".navigation li");
+
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+      list.forEach((item) =>
+        item.addEventListener("click", function () {
+
+          list.forEach((item) => item.classList.remove("selected"))
+          this.classList.add("selected");
+
+        })
+      );
+    </script>
+  </body>
+</html>

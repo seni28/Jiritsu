@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Jiritsu </title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="welcomestyle.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="navigation">
+        <ul>
+          <li class="logo"> 
+            <a href="index.html">
+              <!-- <div class="logoicon"> 
+                <a><img src="Logo.png" alt="Jiritsu Logo"> </a>
+              </div> -->
+              <span class="title"> Dashboard </span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="index.html">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title">Home</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="electricité.html">
+              <span class="icon">
+                <ion-icon name="flash-outline"></ion-icon>
+              </span>
+              <span class="title">Electricité</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="eau.html">
+              <span class="icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </span>
+              <span class="title">Eau</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="thermometer-outline"></ion-icon>
+              </span>
+              <span class="title">Température</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="person-outline"></ion-icon>
+              </span>
+              <span class="title">Informations</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </span>
+              <span class="title"> Mieux consommer </span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="thermometer-outline"></ion-icon>
+              </span>
+              <span class="title">A propos</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Main -->
+
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"> </ion-icon>
+          </div>
+          <div class="user">
+            <!-- <ion-icon name="person-circle-outline"></ion-icon>   -->
+            <a href="informations.html"></a>
+            <img src="user.png" alt="user">
+          </div>
+        </div>
+
+        <div class="welcome">
+          <div class="cloud">
+            <h1> Hello ____ ! Aujourd'hui, il fait 15°C</h1>
+            <div div class="iconw sunny">
+              <div class="sun">
+                <div class="rays"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <!-- cards -->
+
+        <div class="cardBox">
+          <div class="card">
+            <div>
+              <div class="numbers">1000</div>
+              <div class="cardName">Consommation journalière |éléc</div>
+            </div>
+            <div class="iconBox">
+              <ion-icon name="beaker-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">280</div>
+              <div class="cardName">Consommation journalière| eau</div>
+            </div>
+
+            <div class="iconBox">
+              <ion-icon name="cellular-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">75</div>
+              <div class="cardName">Consommation hebdo |éléc</div>
+            </div>
+
+            <div class="iconBox">
+              <ion-icon name="hourglass-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">1400</div>
+              <div class="cardName">Consommation hebdo |eau</div>
+            </div>
+
+            <div class="iconBox">
+              <ion-icon name="pencil-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Charts -->
+        <div class="graphBox">
+          
+          <div class="box">
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="box2"> 
+            <canvas id="Chart2"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="my_chart.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      //Menu Toogle
+      let toggle = document.querySelector(".toggle");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+
+      toggle.addEventListener("click", function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+      });
+
+      //add hovered class in selected list item
+
+      let list = document.querySelectorAll(".navigation li");
+
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+      list.forEach((item) =>
+        item.addEventListener("click", function () {
+
+          list.forEach((item) => item.classList.remove("selected"))
+          this.classList.add("selected");
+
+        })
+      );
+    </script>
+  </body>
+</html>

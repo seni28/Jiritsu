@@ -1,0 +1,108 @@
+/* charts home */
+
+.graphBox {
+    position: relative;
+    width: 100%;
+    padding: 50px;
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    min-height: 200px;
+  
+}
+  
+.graphHeader {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.interval {
+display: flex;
+font-size: 1.1rem;
+column-gap: 16px;
+
+user-select: none;
+}
+
+.interval span {
+cursor: pointer;
+}
+.interval span:hover {
+color: var(--blue);
+}
+.interval span.active {
+color: var(--blue);
+}
+
+.graphHeader select {
+font-size: 1.2rem;
+}
+
+.graphBox .box {
+position: relative;
+background: #fff;
+padding: 20px;
+width: 100%;
+box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+border-radius: 20px;
+}
+
+.graphBox .box2 {
+position: relative;
+background: #fff;
+border-radius: 20px;
+width: 100%;
+padding: 10px;
+box-shadow: 0 7px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* chart electricity  */
+
+.chartBox {
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+padding: 30px;
+gap: 30px;
+/* min-height: 200px;  */
+}
+
+.chartBox .graphBoxElect {
+background: #fff;
+padding: 20px;
+box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+.chartBox .graphBoxElect .boxE1 {
+position: relative;
+background: #fff;
+padding: 20px;
+width: 100%;
+/* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); */
+border-radius: 20px;
+}
+
+.chartBox .graphBoxElect .boxE2 {
+position: relative;
+background: #fff;
+padding: 20px;
+width: 100%;
+border-radius: 20px;
+}
+
+/* .chartBox .GraphTitle{
+padding: 20px;
+box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+gap: 16px;
+} */

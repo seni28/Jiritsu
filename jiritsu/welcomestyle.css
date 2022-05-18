@@ -1,0 +1,135 @@
+.welcome{
+    background-color:white;
+    position: relative;
+    padding: 36px;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* div shape */
+
+.cloud{ 
+    margin-top:70px;
+    width:350px;
+    height:120px;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+}
+.cloud::after, .cloud::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+}
+.cloud::after{
+    width:100px;
+    height:100px;
+    top:-220px;
+    left:50px;
+}
+.cloud::before{
+    width:180px;
+    height:180px;
+    top: -70px;
+    left:130px;
+}
+
+  
+
+h1 {
+    position: relative;
+    display:flex;
+    justify-content:center;
+}
+
+.iconw 
+{
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    /* right:-16em; */
+    width: 10%;
+    height: 5em;
+    font-size: 0.75em;
+    top: 2.5em;   /* pour changer la taille de l'icone */
+}
+.sun {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    margin: -1.25em;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.375em yellow;
+    animation: spin 12s infinite linear;
+}
+
+.rays {
+    position: relative;
+    top: -2em;
+    left: 50%;
+    display: block;
+    width: 0.375em;
+    height: 1.125em;
+    margin-left: -0.1875em;
+    background: yellow;
+    border-radius: 0.25em;
+    box-shadow: 0 5.375em yellow;
+}
+.rays:before,
+.rays:after {
+    content: '';
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    display: block;
+    width: 0.375em;
+    height: 1.125em;
+    transform: rotate(60deg);
+    transform-origin: 50% 3.25em;
+    background: yellow;
+    border-radius: 0.25em;
+    box-shadow: 0 5.375em yellow;
+}
+
+.rays:before {
+    transform: rotate(120deg);
+}
+
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+/* @keyframes rain {
+    0% {
+      background: #0cf;
+      box-shadow:
+        0.625em 0.875em 0 -0.125em rgba(255,255,255,0.2),
+        -0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),
+        -1.375em -0.125em 0 #0cf;
+    }
+    25% {
+      box-shadow:
+        0.625em 0.875em 0 -0.125em rgba(255,255,255,0.2),
+        -0.875em 1.125em 0 -0.125em #0cf,
+        -1.375em -0.125em 0 rgba(255,255,255,0.2);
+    }
+    50% {
+      background: rgba(255,255,255,0.3);
+      box-shadow:
+        0.625em 0.875em 0 -0.125em #0cf,
+        -0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),
+        -1.375em -0.125em 0 rgba(255,255,255,0.2);
+    }
+    100% {
+      box-shadow:
+        0.625em 0.875em 0 -0.125em rgba(255,255,255,0.2),
+        -0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),
+        -1.375em -0.125em 0 #0cf;
+    }
+  }
+   */
